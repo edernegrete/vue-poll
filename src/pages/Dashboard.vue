@@ -11,13 +11,16 @@
         :percentage="value.percentage"/>
       </div>
       <h2>All answers</h2>
-      <div class="info">
+      <div class="info" v-if="typeof(dashboard.answers) !== 'string'">
         <InfoCard
           v-for="(item, key) in dashboard.answers"
           :key="key"
           :title="new Date(item.timestamp).toString()"
           :items="item.data"/>
       </div>
+      <span v-else>
+        {{dashboard.answers}}
+      </span>
     </div>
     <div v-if="loading">
       <spinner></spinner>
