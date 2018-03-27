@@ -9,9 +9,9 @@ export default function request(baseUrl, method, payload) {
     method,
     body,
   }).then(res => res.json(), (err) => {
-    console.log('Fetch Error: ', err);
+    Promise.reject(err);
   })
     .then(data => data, (err) => {
-      console.log('Fetch Error: ', err);
+      Promise.reject(err);
     });
 }

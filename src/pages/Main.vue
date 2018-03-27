@@ -4,7 +4,7 @@
       <spinner></spinner>
     </div>
     <div v-if="!loading && !success">
-      <p class="title">¿Cuál prefieres?</p>
+      <p class="title">Which one do you prefer?</p>
       <Poll class="Poll" :options="options" @optionSelected="handleEvent">
       </Poll>
     </div>
