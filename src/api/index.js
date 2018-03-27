@@ -1,6 +1,6 @@
 export default function request(baseUrl, method, payload) {
   const url = baseUrl;
-  const body = payload ? JSON.stringify(payload) : {};
+  const body = payload ? JSON.stringify(payload) : null;
   return fetch(url, {
     headers: {
       Accept: 'application/json',
@@ -8,5 +8,10 @@ export default function request(baseUrl, method, payload) {
     },
     method,
     body,
-  }).then(res => res.json()).then(data => data);
+  }).then(res => res.json(), (err) => {
+    console.log('Fetch Error: ', err);
+  })
+    .then(data => data, (err) => {
+      console.log('Fetch Error: ', err);
+    });
 }
