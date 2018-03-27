@@ -51,6 +51,7 @@ export default {
   },
   mounted() {
     const id = this.current;
+    this.$store.dispatch('setValue', 1);
     this.setPoll(id);
   },
   methods: {
