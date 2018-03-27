@@ -52,6 +52,7 @@ export default {
   mounted() {
     const id = this.current;
     this.$store.dispatch('setValue', 1);
+    this.$store.dispatch('cleanAnswer');
     this.setPoll(id);
   },
   methods: {

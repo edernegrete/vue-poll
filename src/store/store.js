@@ -16,6 +16,9 @@ export default new Vuex.Store({
       data.pollId = state.current;
       state.answers.push(data);
     },
+    CLEAN_ANSWER(state) {
+      state.answers.length = 0;
+    },
   },
   actions: {
     setValue({ commit }, input) {
@@ -23,6 +26,9 @@ export default new Vuex.Store({
     },
     setAnswer({ commit }, answer) {
       commit('SET_ANSWER', answer);
+    },
+    cleanAnswer({ commit }, answer) {
+      commit('CLEAN_ANSWER', answer);
     },
   },
   getters: {
